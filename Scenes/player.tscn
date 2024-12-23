@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsbgmji32ma65"]
+
+[ext_resource type="Texture2D" uid="uid://05lvaecdfyui" path="res://Rocky Roads/Enemies/frog.png" id="1_a1g2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68nkb"]
+size = Vector2(16, 12)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_a1g2w")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_68nkb")
