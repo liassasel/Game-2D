@@ -1,18 +1,77 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsbgmji32ma65"]
+[gd_scene load_steps=8 format=3 uid="uid://dsbgmji32ma65"]
 
 [ext_resource type="Texture2D" uid="uid://05lvaecdfyui" path="res://Rocky Roads/Enemies/frog.png" id="1_a1g2w"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_hi3dt"]
+
+[sub_resource type="Animation" id="Animation_vlldg"]
+resource_name = "idle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_iulx4"]
+resource_name = "walk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+
+[sub_resource type="Animation" id="Animation_yrayw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ps7so"]
+_data = {
+"RESET": SubResource("Animation_yrayw"),
+"idle": SubResource("Animation_vlldg"),
+"walk": SubResource("Animation_iulx4")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68nkb"]
 size = Vector2(16, 12)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_hi3dt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_a1g2w")
 hframes = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ps7so")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
