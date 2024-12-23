@@ -147,17 +147,17 @@ zoom = Vector2(4, 4)
 [node name="SilverCoin" parent="." instance=ExtResource("8_v00ru")]
 position = Vector2(-56, -54)
 
-[node name="SilverCoin2" parent="." instance=ExtResource("8_v00ru")]
-position = Vector2(-8, -103)
+[node name="SilverCoin2" parent="SilverCoin" instance=ExtResource("8_v00ru")]
+position = Vector2(48, -49)
 
-[node name="SilverCoin3" parent="." instance=ExtResource("8_v00ru")]
-position = Vector2(55, -55)
+[node name="SilverCoin3" parent="SilverCoin" instance=ExtResource("8_v00ru")]
+position = Vector2(111, -1)
 
-[node name="SilverCoin4" parent="." instance=ExtResource("8_v00ru")]
-position = Vector2(-88, -92)
+[node name="SilverCoin4" parent="SilverCoin" instance=ExtResource("8_v00ru")]
+position = Vector2(-32, -38)
 
-[node name="SilverCoin5" parent="." instance=ExtResource("8_v00ru")]
-position = Vector2(86, -10)
+[node name="SilverCoin5" parent="SilverCoin" instance=ExtResource("8_v00ru")]
+position = Vector2(142, 44)
 
-[node name="SilverCoin6" parent="." instance=ExtResource("8_v00ru")]
-position = Vector2(-7, -33)
+[node name="SilverCoin6" parent="SilverCoin" instance=ExtResource("8_v00ru")]
+position = Vector2(49, 21)
